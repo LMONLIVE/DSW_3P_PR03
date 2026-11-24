@@ -48,6 +48,22 @@ builder.Services
             };
     });
 
+// CONFIGURAR POLÍTICA DE CORS
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("CharacterHubFrontend", policy =>
+    {
+        policy.WithOrigins(
+                "http://localhost:5500",
+                "http://127.0.0.1:5500"
+            )
+            .AllowAnyHeader()
+            .AllowAnyMethod();
+    });
+});
+
+builder.Services.AddAuthorization();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -64,6 +80,7 @@ if (app.Environment.IsDevelopment())
     });
 }
 
+app.UseCors("CharacterHubFrontend");
 app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
