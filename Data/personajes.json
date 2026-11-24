@@ -1,0 +1,12 @@
+[
+  {
+    "Id": 2,
+    "Nombre": "John Marston",
+    "Videojuego": "Red Dead Redemption",
+    "Clase": "Vaquero",
+    "Nivel": 15,
+    "Poder": 30,
+    "Disponible": true,
+    "ImagenUrl": "https://static.wikia.nocookie.net/reddeadredemption/images/6/62/John1907New.png/revision/latest/scale-to-width/360?cb=20251111100859"
+  }
+]
